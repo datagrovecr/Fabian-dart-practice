@@ -18,5 +18,9 @@ void main() {
   functionParameters2("Pedro", 10324);
   print(functionReturn('Hola buenas'));
   print(functionReturn2("Hello ", ":)"));
-  
+  examiningString("Heulouo my hel frend l");
+  modifyingStrings();
+  lists();
+  print(isograms("rgdgs"));
+  print(isIsogram("qwerqty"));
 }
