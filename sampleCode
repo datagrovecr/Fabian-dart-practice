@@ -173,3 +173,83 @@ String functionReturn(String text){
 }
 
 String functionReturn2(String a, String b) => a + b;
+
+void examiningString(String text){
+  print("\nExamining Strings assignment");
+  
+  if(text.isNotEmpty){
+      if(text.startsWith("H")){
+        print("Starts with H");
+      }
+        
+      if(text.endsWith("l")){
+        print("Ends with L");
+      }
+        
+    if(text.contains("hel")){
+      print("Index of Hel: ${text.indexOf("hel")}");
+    }
+  }
+}
+
+void modifyingStrings(){
+  
+  print("\nExamining Strings assignment");
+  
+  String name1 = "Terrence   ";
+  String name2 = "   Philip";
+  String name3 = "philip";
+  
+  name3 = name3.padLeft(7);
+  
+  name1 = name1.trim();
+  name2 = name2.trim();
+  name3 = name3.substring(1, name3.length);
+  
+  name1 = name1.toUpperCase();
+  
+  print(name3);
+  print(name1);
+  print(name2);
+  
+  String phrase = "Knowledge is power.";
+  print(phrase.replaceAll("power", "I just wanted to change something"));
+  
+}
+
+void lists(){
+  print("\nExamining Lists assignment");
+  
+  List numbers = [5,7,10];
+  List reverse = [];
+  
+  for(int i = numbers.length-1; i >= 0; i--){
+    reverse.add(numbers[i]);
+    numbers.remove(numbers[i]);
+  }
+  reverse.sort();
+  print(reverse);
+  print(numbers);
+  
+  for (int num in reverse){
+    print("Numero ${num}");
+  }
+}
+
+bool isIsogram(String word) {
+  
+  print("\nIsogram assignment");
+  
+  word = word.toLowerCase();
+
+  List<String> letters = word.split('');
+
+  letters.sort();
+
+  for (int i = 1; i < letters.length; i++) {
+    if (letters[i] == letters[i - 1]) {
+      return false;
+    } 
+  }
+  return true;
+}
