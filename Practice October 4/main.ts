@@ -41,17 +41,39 @@ function getPermutation(n: number, k: number): string {
 //Just a failed experiment
 import * as readline from "node:readline";
 import { stdin, stdout } from "process";
-var palabra= " ";
 const rl = readline.createInterface({
     input : stdin,
     output: stdout
 });
 
-rl.question ("Enter the word you'd like to search for:", (answer) => {
-    palabra= answer;
-    rl.close();
-})
+async function readLine(): Promise<string> {
 
-console.log(palabra + "jiji");
+    const readLine = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
 
-console.log(getPermutation(5,3));
+    let answer = ""
+    readLine.question("This is the question", (it: string) => { 
+         answer = it
+         readLine.close()
+    })
+
+    return(answer)
+
+}
+
+let answer;
+
+async function aMiscFunction(): Promise<string> {
+
+    answer = await readLine()
+
+    return answer;
+}
+
+console.log(aMiscFunction);
+
+
+
+//console.log(getPermutation(5,3));
